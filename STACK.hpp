@@ -48,12 +48,9 @@ void Stack<T, Cont>::pop()
 
 template<typename T, template<typename, typename> class Cont>
 T const& Stack<T, Cont>::top()
-{
-	if (!elems.empty())
-		return elems.back();
-	else
-		throw std::string("top(): unable to extract element from an empty stack")
-	return static_cast<Stack<T, Cont>>(0);
+{	
+	assert(!elems.empty());
+	return elems.back();
 }
 
 template<typename T, template<typename, typename> class Cont>
