@@ -19,8 +19,8 @@ public:
 
 template<typename T,
 	template<typename Elem, typename = std::allocator<Elem>>
-class Cont = std::deque>
-	class Stack
+		class Cont = std::deque>
+class Stack
 {
 private:
 	Cont<T> elems;
@@ -61,11 +61,11 @@ public:
 
 	template<typename T2,
 		template<typename Elem2, typename = std::allocator<Elem2>> class Cont2,
-		typename = typename std::enable_if<std::is_convertible<T2, T>::value>::type>
-		Stack<T, Cont>& operator= (Stack<T2, Cont2> const&);
+			typename = typename std::enable_if<std::is_convertible<T2, T>::value>::type>
+	Stack<T, Cont>& operator= (Stack<T2, Cont2> const&);
 
 	template<typename, template<typename, typename> class>
-	friend class Stack;
+		friend class Stack;
 
 };
 
