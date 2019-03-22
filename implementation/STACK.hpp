@@ -34,7 +34,16 @@ public:
 
 	explicit Stack(T&&);
 
+	iterator begin()
+	{
+		return elems.begin();
+	}
 
+	iterator end()
+	{
+		return elems.end();
+	}
+	
 	const_iterator begin() const
 	{
 		return elems.begin();
